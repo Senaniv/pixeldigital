@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
 import { portfolioItems } from '@/data/portfolio';
 import PortfolioCard from '@/components/portfolio/PortfolioCard';
@@ -10,7 +10,6 @@ export default function PortfolioPreview() {
   const t = useTranslations('portfolio');
   const locale = useLocale();
   const featured = portfolioItems.slice(0, 3);
-  const portfolioLink = locale === 'en' ? '/en/portfolio' : '/portfolio';
 
   return (
     <section className="py-16 md:py-24 bg-[#060B17]">
@@ -21,7 +20,7 @@ export default function PortfolioPreview() {
             <p className="text-gray-400">{t('subtitle')}</p>
           </div>
           <Link
-            href={portfolioLink}
+            href="/portfolio"
             className="flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold text-sm transition-colors whitespace-nowrap"
           >
             {t('view_all')} <ArrowRight size={16} />

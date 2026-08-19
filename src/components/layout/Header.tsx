@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 
 const WHATSAPP = 'https://wa.me/994558121400';
 
@@ -23,42 +22,29 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
-  // Build locale-aware href
-  const localePath = (path: string) => {
-    if (locale === 'en') return `/en${path}`;
-    return path;
-  };
-
-  // Switch language
-  const switchLocale = () => {
-    // Remove /en prefix or add it
-    if (locale === 'az') {
-      const enPath = '/en' + pathname;
-      router.push(enPath);
-    } else {
-      const azPath = pathname.replace(/^\/en/, '') || '/';
-      router.push(azPath);
-    }
+  const changeLocale = (nextLocale: 'az' | 'en') => {
+    if (nextLocale === locale) return;
+    router.replace(pathname, { locale: nextLocale });
   };
 
   const navLinks = [
-    { href: localePath('/'), label: t('home') },
-    { href: localePath('/xidmetler'), label: t('services') },
-    { href: localePath('/portfolio'), label: t('portfolio') },
-    { href: localePath('/haqqimizda'), label: t('about') },
-    { href: localePath('/elaqe'), label: t('contact') },
+    { href: '/', label: t('home') },
+    { href: '/xidmetler', label: t('services') },
+    { href: '/portfolio', label: t('portfolio') },
+    { href: '/haqqimizda', label: t('about') },
+    { href: '/elaqe', label: t('contact') },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-[#0A0F1E]/95 backdrop-blur-sm shadow-lg shadow-black/20' : 'bg-transparent'
+        scrolled ? 'bg-[#0A0F1E]/95 backdrop-blur-md shadow-lg shadow-black/20 border-b border-white/5' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href={localePath('/')} className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0">
             <Image
               src="/logo.png"
               alt="Pixel Digital Service"
@@ -82,14 +68,34 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right side: Lang switcher + CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={switchLocale}
-              className="text-sm font-semibold text-gray-400 hover:text-white transition-colors duration-200 tracking-wide"
-            >
-              {locale === 'az' ? 'EN' : 'AZ'}
-            </button>
+          {/* Right side: Clear AZ | EN Switcher + CTA */}
+          <div className="hidden md:flex items-center gap-5">
+            {/* Dual Language Switcher */}
+            <div className="flex items-center bg-white/5 border border-white/10 rounded-lg p-1 text-xs">
+              <button
+                type="button"
+                onClick={() => changeLocale('az')}
+                className={`px-2.5 py-1 rounded-md font-semibold transition-all duration-200 ${
+                  locale === 'az'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                AZ
+              </button>
+              <button
+                type="button"
+                onClick={() => changeLocale('en')}
+                className={`px-2.5 py-1 rounded-md font-semibold transition-all duration-200 ${
+                  locale === 'en'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
             <a
               href={WHATSAPP}
               target="_blank"
@@ -100,14 +106,34 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Mobile: lang + hamburger */}
+          {/* Mobile: lang switcher + hamburger */}
           <div className="flex md:hidden items-center gap-3">
-            <button
-              onClick={switchLocale}
-              className="text-sm font-semibold text-gray-400 hover:text-white transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
-            >
-              {locale === 'az' ? 'EN' : 'AZ'}
-            </button>
+            {/* Mobile Dual Language Switcher */}
+            <div className="flex items-center bg-white/5 border border-white/10 rounded-lg p-0.5 text-xs">
+              <button
+                type="button"
+                onClick={() => changeLocale('az')}
+                className={`px-2 py-1 rounded font-semibold transition-all duration-200 ${
+                  locale === 'az'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                AZ
+              </button>
+              <button
+                type="button"
+                onClick={() => changeLocale('en')}
+                className={`px-2 py-1 rounded font-semibold transition-all duration-200 ${
+                  locale === 'en'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="text-gray-300 hover:text-white min-w-[44px] min-h-[44px] flex items-center justify-center"
@@ -121,8 +147,8 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       {menuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 bg-[#0A0F1E]/98 backdrop-blur-sm z-40">
-          <nav className="flex flex-col items-center justify-center h-full gap-8 pb-20">
+        <div className="md:hidden fixed inset-0 top-16 bg-[#0A0F1E]/98 backdrop-blur-md z-40">
+          <nav className="flex flex-col items-center justify-center h-full gap-7 pb-20">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -133,12 +159,45 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Language Switcher in Mobile Menu */}
+            <div className="flex items-center gap-2 mt-2 p-1.5 bg-white/5 border border-white/10 rounded-xl">
+              <button
+                type="button"
+                onClick={() => {
+                  changeLocale('az');
+                  setMenuOpen(false);
+                }}
+                className={`px-5 py-2 rounded-lg text-sm font-semibold transition-all ${
+                  locale === 'az'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                Azərbaycan (AZ)
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  changeLocale('en');
+                  setMenuOpen(false);
+                }}
+                className={`px-5 py-2 rounded-lg text-sm font-semibold transition-all ${
+                  locale === 'en'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                English (EN)
+              </button>
+            </div>
+
             <a
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
-              className="mt-4 bg-blue-600 hover:bg-blue-500 text-white text-lg font-semibold px-8 py-3 rounded-xl transition-colors"
+              className="mt-4 bg-green-600 hover:bg-green-500 text-white text-lg font-semibold px-8 py-3 rounded-xl transition-colors shadow-lg shadow-green-900/30"
             >
               WhatsApp
             </a>

@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Code2, ArrowLeft, MessageCircle, Check, Package, ShoppingBag, Users, BarChart3, Sparkles } from 'lucide-react';
 import PortfolioGrid from '@/components/portfolio/PortfolioGrid';
 import type { Metadata } from 'next';
@@ -33,7 +33,6 @@ export default async function CustomSoftwarePage({
   const tCommon = await getTranslations('common');
   const tPortfolio = await getTranslations('portfolio');
 
-  const backLink = locale === 'en' ? '/en/xidmetler' : '/xidmetler';
   const whatsappUrl = `${WHATSAPP_BASE}?text=${encodeURIComponent(
     locale === 'en'
       ? 'Hello, I would like to discuss building Custom Software for my business.'
@@ -48,7 +47,7 @@ export default async function CustomSoftwarePage({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
         <Link
-          href={backLink}
+          href="/xidmetler"
           className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white mb-8 transition-colors"
         >
           <ArrowLeft size={16} />

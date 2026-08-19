@@ -1,13 +1,11 @@
 'use client';
 
-import { useTranslations, useLocale } from 'next-intl';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
 
 export default function AboutSummary() {
   const t = useTranslations('about');
-  const locale = useLocale();
-  const aboutLink = locale === 'en' ? '/en/haqqimizda' : '/haqqimizda';
 
   return (
     <section className="py-16 md:py-20 bg-[#060B17]">
@@ -16,7 +14,7 @@ export default function AboutSummary() {
         <p className="text-gray-300 text-lg mb-3 leading-relaxed">{t('subtitle')}</p>
         <p className="text-gray-400 leading-relaxed mb-8">{t('description')}</p>
         <Link
-          href={aboutLink}
+          href="/haqqimizda"
           className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold transition-colors"
         >
           {t('read_more')} <ArrowRight size={16} />

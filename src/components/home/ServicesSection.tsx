@@ -1,7 +1,7 @@
 'use client';
 
-import { useTranslations, useLocale } from 'next-intl';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { ArrowRight, Monitor, Code2, Bot, Smartphone, Palette } from 'lucide-react';
 
 const FOCUS_COLORS = {
@@ -17,10 +17,6 @@ const GROWING_ITEMS = [
 
 export default function ServicesSection() {
   const t = useTranslations('services');
-  const locale = useLocale();
-
-  const softwareLink = locale === 'en' ? '/en/xidmetler/xususi-proqram-teminati' : '/xidmetler/xususi-proqram-teminati';
-  const webLink = locale === 'en' ? '/en/xidmetler/veb-platformalar' : '/xidmetler/veb-platformalar';
 
   return (
     <section className="py-16 md:py-24 bg-[#0A0F1E]">
@@ -35,7 +31,7 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {/* Software */}
           <Link
-            href={softwareLink}
+            href="/xidmetler/xususi-proqram-teminati"
             className={`group relative bg-gradient-to-br ${FOCUS_COLORS.software} border rounded-2xl p-8 md:p-10 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-900/20`}
           >
             <div className="w-14 h-14 rounded-2xl bg-purple-500/20 flex items-center justify-center mb-6">
@@ -57,7 +53,7 @@ export default function ServicesSection() {
 
           {/* Web */}
           <Link
-            href={webLink}
+            href="/xidmetler/veb-platformalar"
             className={`group relative bg-gradient-to-br ${FOCUS_COLORS.web} border rounded-2xl p-8 md:p-10 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-900/20`}
           >
             <div className="w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-6">

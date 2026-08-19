@@ -2,14 +2,13 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { ArrowRight, MessageCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 
 const WHATSAPP = 'https://wa.me/994558121400?text=Salam%2C%20layih%C9%99m%20haqq%C4%B1nda%20m%C9%99lumat%20almaq%20istirdim.';
 
 export default function HeroSection() {
   const t = useTranslations('hero');
   const locale = useLocale();
-  const portfolioLink = locale === 'en' ? '/en/portfolio' : '/portfolio';
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
@@ -57,7 +56,7 @@ export default function HeroSection() {
             {t('cta_primary')}
           </a>
           <Link
-            href={portfolioLink}
+            href="/portfolio"
             className="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[56px]"
           >
             {t('cta_secondary')}

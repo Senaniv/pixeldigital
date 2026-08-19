@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Target, Users, ShieldCheck, HeartHandshake, Clock, Sparkles, MessageCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -33,8 +33,6 @@ export default async function AboutPage({
 
   const values = t.raw('values') as { title: string; description: string }[];
   const valueIcons = [Target, ShieldCheck, Sparkles, HeartHandshake];
-
-  const contactLink = locale === 'en' ? '/en/elaqe' : '/elaqe';
 
   return (
     <div className="pt-28 pb-20 bg-[#0A0F1E] min-h-screen">
@@ -125,7 +123,7 @@ export default async function AboutPage({
               {tContact('whatsapp_btn')}
             </a>
             <Link
-              href={contactLink}
+              href="/elaqe"
               className="inline-flex items-center justify-center px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold rounded-xl transition-colors"
             >
               {tContact('discuss_btn')}

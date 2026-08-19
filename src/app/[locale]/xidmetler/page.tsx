@@ -1,6 +1,5 @@
-import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { ArrowRight, Code2, Monitor, Bot, Smartphone, Palette, CheckCircle2 } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -28,9 +27,6 @@ export default async function ServicesPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations('services');
-
-  const softwareLink = locale === 'en' ? '/en/xidmetler/xususi-proqram-teminati' : '/xidmetler/xususi-proqram-teminati';
-  const webLink = locale === 'en' ? '/en/xidmetler/veb-platformalar' : '/xidmetler/veb-platformalar';
 
   const otherServices = [
     {
@@ -120,7 +116,7 @@ export default async function ServicesPage({
               </div>
 
               <Link
-                href={softwareLink}
+                href="/xidmetler/xususi-proqram-teminati"
                 className="inline-flex items-center justify-between w-full px-6 py-3.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-purple-900/30"
               >
                 <span>{locale === 'en' ? 'View Custom Software Solutions' : 'Xüsusi Proqram Həllərinə Bax'}</span>
@@ -167,7 +163,7 @@ export default async function ServicesPage({
               </div>
 
               <Link
-                href={webLink}
+                href="/xidmetler/veb-platformalar"
                 className="inline-flex items-center justify-between w-full px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30"
               >
                 <span>{locale === 'en' ? 'View Web Platform Solutions' : 'Veb Platforma Həllərinə Bax'}</span>

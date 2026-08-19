@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { MessageCircle } from 'lucide-react';
 import InstagramIcon from '@/components/ui/InstagramIcon';
@@ -14,15 +14,14 @@ export default function Footer() {
   const tNav = useTranslations('nav');
   const locale = useLocale();
 
-  const localePath = (path: string) => (locale === 'en' ? `/en${path}` : path);
   const year = new Date().getFullYear();
 
   const links = [
-    { href: localePath('/'), label: tNav('home') },
-    { href: localePath('/xidmetler'), label: tNav('services') },
-    { href: localePath('/portfolio'), label: tNav('portfolio') },
-    { href: localePath('/haqqimizda'), label: tNav('about') },
-    { href: localePath('/elaqe'), label: tNav('contact') },
+    { href: '/', label: tNav('home') },
+    { href: '/xidmetler', label: tNav('services') },
+    { href: '/portfolio', label: tNav('portfolio') },
+    { href: '/haqqimizda', label: tNav('about') },
+    { href: '/elaqe', label: tNav('contact') },
   ];
 
   return (
