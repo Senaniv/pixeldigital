@@ -1,0 +1,224 @@
+{
+  "nav": {
+    "home": "Ana səhifə",
+    "services": "Xidmətlər",
+    "portfolio": "Portfolio",
+    "about": "Haqqımızda",
+    "contact": "Əlaqə"
+  },
+  "hero": {
+    "title": "Gündəlik təkrarlanan, sizi yoran işlərə avtomatik həllər hazırlayırıq.",
+    "subtitle": "Anbar, sifariş, müştəri idarəetməsi və digər əl ilə edilən işlər — fikrinizi bizə yazın, sizin üçün həll təklifi hazırlayaq.",
+    "cta_primary": "Fikrinizi bizə yazın",
+    "cta_secondary": "Portfolioya bax"
+  },
+  "advantages": {
+    "title": "Niyə Pixel?",
+    "items": [
+      {
+        "title": "Fərdi həllər",
+        "description": "Hər layihə sizin iş prosesinizə uyğun hazırlanır — şablon yox, fərdi yanaşma."
+      },
+      {
+        "title": "Sürətli və funksional",
+        "description": "Dizayn ilə funksionallığı birləşdiririk — gözəl görünən, düzgün işləyən."
+      },
+      {
+        "title": "Layihədən sonra da dəstək",
+        "description": "Təhvildən sonra da yanınızdayıq — suallar, yeniləmələr, genişlənmələr."
+      }
+    ]
+  },
+  "services": {
+    "title": "Xidmətlərimiz",
+    "subtitle": "Gündəlik təkrarlanan işlərə avtomatik həll axtarırsınız?",
+    "main_title": "Əsas fokus sahələrimiz",
+    "growing_title": "Tezliklə daha geniş",
+    "growing_badge": "Yeni",
+    "detail_link": "Ətraflı →",
+    "items": {
+      "software": {
+        "title": "Xüsusi proqram təminatı",
+        "description": "Stok sayımı, sifariş qeydiyyatı, müştəri izlənməsi — əl ilə etdiyiniz işi sizin üçün avtomatlaşdırırıq.",
+        "badge": "Əsas fokus"
+      },
+      "web": {
+        "title": "Veb platformalar",
+        "description": "Biznesinizin daxili proseslərini rəqəmsallaşdıran admin panellər, müştəri portalları, e-commerce və SaaS platformalar.",
+        "badge": "Əsas fokus"
+      },
+      "ai": {
+        "title": "AI və avtomatlaşdırma",
+        "description": "İş proseslərini ağıllı alqoritmlər ilə optimallaşdırın."
+      },
+      "mobile": {
+        "title": "Mobil tətbiqlər",
+        "description": "iOS və Android üçün biznes tətbiqləri."
+      },
+      "design": {
+        "title": "UI/UX dizayn",
+        "description": "İstifadəçi dostu, müasir interfeys dizaynı."
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Nümunə layihələrimiz",
+    "example_badge": "Nümunə",
+    "filter_all": "Hamısı",
+    "filter_web": "Veb platformalar",
+    "filter_software": "Proqram təminatı",
+    "view_btn": "Bax",
+    "order_btn": "Bu tipli layihə sifariş et",
+    "features_title": "Daxil olan funksiyalar",
+    "tech_title": "Texnologiyalar",
+    "view_all": "Bütün layihələrə bax →",
+    "selected_title": "Seçilmiş layihələr"
+  },
+  "how_we_work": {
+    "title": "Necə işləyirik?",
+    "subtitle": "Sadə, şəffaf, nəticəyə yönəlik iş prosesi",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Müraciət",
+        "description": "Fikrinizi WhatsApp və ya forma ilə bizə yazın. Hansı iş sizi yorur? Bir neçə cümlə kifayətdir."
+      },
+      {
+        "number": "02",
+        "title": "Analiz və Təklif",
+        "description": "24 saat ərzində sizinlə əlaqə saxlayırıq. Tələbləri birlikdə müzakirə edir, fərdi həll təklifi hazırlayırıq."
+      },
+      {
+        "number": "03",
+        "title": "Hazırlanma",
+        "description": "Dizayn və inkişaf paralel irəliləyir. Hər mərhələdə sizə hesabat veririk."
+      },
+      {
+        "number": "04",
+        "title": "Test və Təhvil",
+        "description": "Layihə sınaqdan keçirilir, sizə təqdim olunur. Düzəlişlər dərhal həll edilir."
+      },
+      {
+        "number": "05",
+        "title": "Dəstək",
+        "description": "Təhvildən sonra da yanınızdayıq — yeniləmələr, suallar və genişlənmə üçün."
+      }
+    ]
+  },
+  "about": {
+    "title": "Haqqımızda",
+    "short_title": "Biz kimik?",
+    "subtitle": "Pixel Digital Service — kiçik bizneslərin böyük problemlərini rəqəmsal həllər ilə aradan qaldırır.",
+    "description": "Gündəlik əl ilə görülən işlər sizin vaxtınızı aparır, səhvlərə yol açır və böyüməyə mane olur. Biz həmin işləri avtomatik həllər ilə əvəz edirik — sadə, funksional və sizin üçün.",
+    "read_more": "Daha ətraflı →",
+    "values": [
+      {
+        "title": "Fərdi yanaşma",
+        "description": "Hər müştərinin iş prosesi fərqlidir. Standart şablon yox, sizin ehtiyacınıza uyğun həll."
+      },
+      {
+        "title": "Şəffaflıq",
+        "description": "Qiymət, müddət, imkanlar — hər şey əvvəlcədən aydın şəkildə müzakirə edilir."
+      },
+      {
+        "title": "Nəticəyə fokus",
+        "description": "Gözəl görünən, amma işləməyən proqram deyil — real problemlərə real həll."
+      },
+      {
+        "title": "Davamlı dəstək",
+        "description": "Layihə bitdikdən sonra da yanınızdayıq — bu, bizim üçün tərəfdaşlıqdır."
+      }
+    ],
+    "story": "Pixel Digital Service kiçik və orta bizneslərin rəqəmsallaşma ehtiyacından doğdu. Hər gün görülen, amma əl ilə edilən onlarca iş var — anbar siyahıları, sifariş qeydlər, müştəri məlumatları... Biz bu işlərə proqram həlləri hazırlayırıq.",
+    "team_placeholder": "Komandamız — kiçik, cəld, ixtisaslı. Hər layihəyə fərdi diqqət ayırırıq.",
+    "response_time": "24 saat ərzində cavab"
+  },
+  "contact": {
+    "title": "Fikrinizi bizə yazın",
+    "subtitle": "Hansı iş sizi yorur? Bir neçə cümlə kifayətdir.",
+    "cta_title": "Fikrinizi bizə yazın, həll təklifi hazırlayaq",
+    "cta_subtitle": "Hansı iş sizi yorur? Bir neçə cümlə kifayətdir.",
+    "whatsapp_btn": "WhatsApp ilə yazın",
+    "instagram_btn": "Instagram",
+    "form_name": "Adınız",
+    "form_contact": "Telefon / Email",
+    "form_message": "Mesajınız",
+    "form_message_placeholder": "Məni yoran işi qısaca izah edin... (məs. hər gün anbar siyahısını əl ilə yazıram)",
+    "form_submit": "Göndər",
+    "form_type": "Layihə növü",
+    "form_type_software": "Xüsusi proqram",
+    "form_type_web": "Veb platforma",
+    "form_type_other": "Digər",
+    "discuss_btn": "Layihənizi müzakirə edək"
+  },
+  "footer": {
+    "slogan": "Gündəlik işlərə avtomatik həllər.",
+    "quick_links": "Sürətli keçidlər",
+    "follow_us": "Bizi izləyin",
+    "rights": "Bütün hüquqlar qorunur.",
+    "company": "Pixel Digital Service"
+  },
+  "service_pages": {
+    "web": {
+      "title": "Veb Platformalar",
+      "hero": "Biznesinizin daxili proseslərini rəqəmsallaşdıran və müştərilərinizə onlayn xidmət göstərən veb platformalar hazırlayırıq.",
+      "includes_title": "Nə daxildir?",
+      "includes": [
+        "Biznes idarəetmə platformaları",
+        "Admin panellər və dashboard-lar",
+        "Müştəri portalları",
+        "Korporativ veb saytlar",
+        "E-commerce platformalar",
+        "Landing page-lər",
+        "SaaS tipli məhsullar"
+      ],
+      "features_title": "Xüsusiyyətlər",
+      "features": [
+        { "title": "Mobil uyğun", "description": "Bütün cihazlarda mükəmməl görünür" },
+        { "title": "SEO optimallaşdırılmış", "description": "Axtarış motorlarında yaxşı sıralama" },
+        { "title": "Sürətli yüklənmə", "description": "Optimize edilmiş performans" },
+        { "title": "Təhlükəsiz", "description": "Müasir təhlükəsizlik standartları" }
+      ],
+      "pricing_note": "Layihənizin həcminə görə fərdi qiymətləndirmə təqdim edirik.",
+      "cta": "Layihənizi müzakirə edək"
+    },
+    "software": {
+      "title": "Xüsusi Proqram Təminatı",
+      "hero": "Stok sayımı, sifariş qeydiyyatı, müştəri izlənməsi — əl ilə etdiyiniz işi sizin üçün avtomatlaşdırırıq.",
+      "solutions_title": "Həll sahələri",
+      "solutions": [
+        {
+          "icon": "📦",
+          "title": "Anbar / Stok idarəetməsi",
+          "description": "Real vaxt stok izlənməsi, giriş-çıxış qeydləri, avtomatik xəbərdarlıqlar"
+        },
+        {
+          "icon": "🛒",
+          "title": "Sifariş / Satış sistemi",
+          "description": "Sifariş qəbulu, statusun izlənməsi, faktura, ödəniş qeydləri"
+        },
+        {
+          "icon": "👥",
+          "title": "CRM — Müştəri idarəetməsi",
+          "description": "Müştəri məlumatları, əlaqə tarixi, görüşlər, xatırlatmalar"
+        },
+        {
+          "icon": "📊",
+          "title": "Hesabat / Analitika",
+          "description": "Satış hesabatları, performans analizi, vizual dashboard-lar"
+        }
+      ],
+      "featured_title": "Öne çıxan nümunə",
+      "pricing_note": "Layihənizin həcminə görə fərdi qiymətləndirmə təqdim edirik.",
+      "cta": "Layihənizi müzakirə edək"
+    }
+  },
+  "common": {
+    "example_note": "Bu nümunə layihədir — real müştəri layihəsi deyil.",
+    "coming_soon": "Tezliklə",
+    "read_more": "Ətraflı oxu",
+    "back": "Geri",
+    "close": "Bağla"
+  }
+}

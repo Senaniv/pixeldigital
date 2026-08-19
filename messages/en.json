@@ -1,0 +1,224 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "We build automated solutions for the repetitive tasks that wear you down.",
+    "subtitle": "Warehouse tracking, order management, customer records and other manual work — tell us your challenge, we'll prepare a solution.",
+    "cta_primary": "Tell us your challenge",
+    "cta_secondary": "View Portfolio"
+  },
+  "advantages": {
+    "title": "Why Pixel?",
+    "items": [
+      {
+        "title": "Custom solutions",
+        "description": "Every project is built around your workflow — no templates, just tailored approaches."
+      },
+      {
+        "title": "Fast and functional",
+        "description": "We combine design with functionality — beautiful to look at, correct in operation."
+      },
+      {
+        "title": "Support after delivery",
+        "description": "We stay with you after handover — questions, updates, expansions."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Looking for automated solutions to your daily repetitive work?",
+    "main_title": "Our main focus areas",
+    "growing_title": "Coming soon",
+    "growing_badge": "New",
+    "detail_link": "Learn more →",
+    "items": {
+      "software": {
+        "title": "Custom Software",
+        "description": "Stock counting, order registration, customer tracking — we automate the manual work you do every day.",
+        "badge": "Main focus"
+      },
+      "web": {
+        "title": "Web Platforms",
+        "description": "Admin panels, customer portals, e-commerce and SaaS platforms that digitize your business processes.",
+        "badge": "Main focus"
+      },
+      "ai": {
+        "title": "AI & Automation",
+        "description": "Optimize business processes with intelligent algorithms."
+      },
+      "mobile": {
+        "title": "Mobile Apps",
+        "description": "Business applications for iOS and Android."
+      },
+      "design": {
+        "title": "UI/UX Design",
+        "description": "User-friendly, modern interface design."
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Our example projects",
+    "example_badge": "Example",
+    "filter_all": "All",
+    "filter_web": "Web Platforms",
+    "filter_software": "Software",
+    "view_btn": "View",
+    "order_btn": "Order this type of project",
+    "features_title": "Included features",
+    "tech_title": "Technologies",
+    "view_all": "View all projects →",
+    "selected_title": "Selected projects"
+  },
+  "how_we_work": {
+    "title": "How We Work",
+    "subtitle": "Simple, transparent, results-oriented process",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Inquiry",
+        "description": "Send us your challenge via WhatsApp or form. What task is slowing you down? A few sentences are enough."
+      },
+      {
+        "number": "02",
+        "title": "Analysis & Proposal",
+        "description": "We contact you within 24 hours. We discuss requirements together and prepare a custom solution proposal."
+      },
+      {
+        "number": "03",
+        "title": "Development",
+        "description": "Design and development progress in parallel. We report to you at every stage."
+      },
+      {
+        "number": "04",
+        "title": "Testing & Handover",
+        "description": "The project is tested and presented to you. Corrections are resolved immediately."
+      },
+      {
+        "number": "05",
+        "title": "Support",
+        "description": "We remain by your side after handover — for updates, questions and expansions."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "short_title": "Who we are",
+    "subtitle": "Pixel Digital Service — solving the big problems of small businesses with digital solutions.",
+    "description": "Daily manual work takes your time, causes errors and hinders growth. We replace that work with automated solutions — simple, functional, and built for you.",
+    "read_more": "Read more →",
+    "values": [
+      {
+        "title": "Individual approach",
+        "description": "Every client's workflow is different. No standard template — a solution tailored to your needs."
+      },
+      {
+        "title": "Transparency",
+        "description": "Price, timeline, capabilities — everything is discussed openly and clearly upfront."
+      },
+      {
+        "title": "Focus on results",
+        "description": "Not software that looks good but doesn't work — real solutions to real problems."
+      },
+      {
+        "title": "Ongoing support",
+        "description": "We stay with you after the project ends — for us, this is a partnership."
+      }
+    ],
+    "story": "Pixel Digital Service was born from the digitalization needs of small and medium businesses. There are dozens of daily tasks done manually — inventory lists, order records, customer data... We build software solutions for these tasks.",
+    "team_placeholder": "Our team — small, agile, specialized. We give individual attention to every project.",
+    "response_time": "Response within 24 hours"
+  },
+  "contact": {
+    "title": "Tell Us Your Challenge",
+    "subtitle": "What task is slowing you down? A few sentences are enough.",
+    "cta_title": "Tell us your challenge — we'll prepare a solution",
+    "cta_subtitle": "What task is slowing you down? A few sentences are enough.",
+    "whatsapp_btn": "Chat on WhatsApp",
+    "instagram_btn": "Instagram",
+    "form_name": "Your Name",
+    "form_contact": "Phone / Email",
+    "form_message": "Message",
+    "form_message_placeholder": "Briefly describe the task slowing you down... (e.g., I manually write inventory lists every day)",
+    "form_submit": "Send",
+    "form_type": "Project type",
+    "form_type_software": "Custom software",
+    "form_type_web": "Web platform",
+    "form_type_other": "Other",
+    "discuss_btn": "Let's discuss your project"
+  },
+  "footer": {
+    "slogan": "Automated solutions for daily tasks.",
+    "quick_links": "Quick Links",
+    "follow_us": "Follow Us",
+    "rights": "All rights reserved.",
+    "company": "Pixel Digital Service"
+  },
+  "service_pages": {
+    "web": {
+      "title": "Web Platforms",
+      "hero": "We build web platforms that digitize your business processes and serve your customers online.",
+      "includes_title": "What's included?",
+      "includes": [
+        "Business management platforms",
+        "Admin panels and dashboards",
+        "Customer portals",
+        "Corporate websites",
+        "E-commerce platforms",
+        "Landing pages",
+        "SaaS products"
+      ],
+      "features_title": "Features",
+      "features": [
+        { "title": "Mobile friendly", "description": "Looks perfect on all devices" },
+        { "title": "SEO optimized", "description": "Good ranking in search engines" },
+        { "title": "Fast loading", "description": "Optimized performance" },
+        { "title": "Secure", "description": "Modern security standards" }
+      ],
+      "pricing_note": "We provide individual pricing based on the scope of your project.",
+      "cta": "Let's discuss your project"
+    },
+    "software": {
+      "title": "Custom Software",
+      "hero": "Stock counting, order registration, customer tracking — we automate the manual work you do every day.",
+      "solutions_title": "Solution areas",
+      "solutions": [
+        {
+          "icon": "📦",
+          "title": "Warehouse / Stock Management",
+          "description": "Real-time stock tracking, entry-exit records, automatic alerts"
+        },
+        {
+          "icon": "🛒",
+          "title": "Order / Sales System",
+          "description": "Order intake, status tracking, invoicing, payment records"
+        },
+        {
+          "icon": "👥",
+          "title": "CRM — Customer Management",
+          "description": "Customer data, contact history, meetings, reminders"
+        },
+        {
+          "icon": "📊",
+          "title": "Reports / Analytics",
+          "description": "Sales reports, performance analysis, visual dashboards"
+        }
+      ],
+      "featured_title": "Featured example",
+      "pricing_note": "We provide individual pricing based on the scope of your project.",
+      "cta": "Let's discuss your project"
+    }
+  },
+  "common": {
+    "example_note": "This is an example project — not a real client project.",
+    "coming_soon": "Coming Soon",
+    "read_more": "Read more",
+    "back": "Back",
+    "close": "Close"
+  }
+}
