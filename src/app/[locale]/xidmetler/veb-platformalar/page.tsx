@@ -40,33 +40,30 @@ export default async function WebPlatformsPage({
 
   const includes = t.raw('includes') as string[];
   const features = t.raw('features') as { title: string; description: string }[];
-
   const featureIcons = [Smartphone, Search, Zap, Shield];
 
   return (
-    <div className="pt-28 pb-20 bg-[#0A0F1E] min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pt-10 sm:pt-14 pb-20 bg-[#0A0F1E] min-h-screen">
+      <div className="max-w-6xl mx-auto px-5 lg:px-8">
         {/* Back Link */}
         <Link
           href="/xidmetler"
-          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white mb-8 transition-colors"
+          className="btn btn-ink text-xs py-2 px-4 mb-8 inline-flex items-center gap-2"
         >
-          <ArrowLeft size={16} />
-          {tCommon('back')}
+          <ArrowLeft size={14} />
+          <span>{tCommon('back')}</span>
         </Link>
 
         {/* Hero Section */}
-        <div className="max-w-4xl mb-16">
-          <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 mb-4">
+        <div className="max-w-3xl mb-16">
+          <span className="chip mb-4">
             <Monitor size={14} className="text-blue-400" />
-            <span className="text-blue-400 text-xs font-semibold uppercase tracking-wider">
-              {locale === 'en' ? 'Web Platforms' : 'Veb Platformalar'}
-            </span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <span>{locale === 'en' ? 'Web Platforms' : 'Veb Platformalar'}</span>
+          </span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
             {t('title')}
           </h1>
-          <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-8">
+          <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8">
             {t('hero')}
           </p>
 
@@ -74,26 +71,26 @@ export default async function WebPlatformsPage({
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/30 hover:scale-[1.02]"
+            className="btn btn-primary"
           >
-            <MessageCircle size={20} />
-            {t('cta')}
+            <MessageCircle size={18} />
+            <span>{t('cta')}</span>
           </a>
         </div>
 
         {/* What's Included & Features */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20">
-          {/* Includes */}
-          <div className="bg-white/[0.02] border border-white/[0.07] rounded-2xl p-8">
-            <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-blue-400" />
-              {t('includes_title')}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+          {/* Includes Card */}
+          <div className="card p-7 sm:p-8 rounded-[28px]">
+            <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-blue-400" />
+              <span>{t('includes_title')}</span>
             </h2>
             <div className="space-y-3.5">
               {includes.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <div className="mt-1 w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0">
-                    <Check size={13} strokeWidth={3} />
+                  <div className="mt-0.5 w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+                    <Check size={12} strokeWidth={3} />
                   </div>
                   <span className="text-gray-300 text-sm sm:text-base">{item}</span>
                 </div>
@@ -101,20 +98,20 @@ export default async function WebPlatformsPage({
             </div>
           </div>
 
-          {/* Features */}
-          <div className="bg-white/[0.02] border border-white/[0.07] rounded-2xl p-8">
-            <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-blue-400" />
-              {t('features_title')}
+          {/* Features Card */}
+          <div className="card p-7 sm:p-8 rounded-[28px]">
+            <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-blue-400" />
+              <span>{t('features_title')}</span>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {features.map((feat, idx) => {
                 const Icon = featureIcons[idx] || Zap;
                 return (
-                  <div key={idx} className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <div className="w-9 h-9 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center mb-3">
+                  <div key={idx} className="p-4 rounded-2xl bg-white/[0.03] border border-white/5">
+                    <span className="icon-plate h-10 w-10 rounded-xl mb-3 text-blue-400">
                       <Icon size={18} />
-                    </div>
+                    </span>
                     <h3 className="text-white font-semibold text-sm mb-1">{feat.title}</h3>
                     <p className="text-gray-400 text-xs leading-relaxed">{feat.description}</p>
                   </div>
@@ -141,7 +138,7 @@ export default async function WebPlatformsPage({
         </div>
 
         {/* Pricing Note & Final CTA */}
-        <div className="bg-gradient-to-r from-blue-950/40 via-blue-900/20 to-[#0F172A] border border-blue-500/20 rounded-2xl p-8 text-center max-w-3xl mx-auto">
+        <div className="card rounded-[28px] p-8 sm:p-12 text-center max-w-3xl mx-auto border-blue-500/20">
           <p className="text-gray-300 text-base mb-6">
             {t('pricing_note')}
           </p>
@@ -149,10 +146,10 @@ export default async function WebPlatformsPage({
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/30 hover:scale-[1.02]"
+            className="btn btn-primary"
           >
-            <MessageCircle size={20} />
-            {t('cta')}
+            <MessageCircle size={18} />
+            <span>{t('cta')}</span>
           </a>
         </div>
       </div>

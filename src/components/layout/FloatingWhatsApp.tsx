@@ -10,10 +10,10 @@ export default function FloatingWhatsApp() {
       href={WHATSAPP}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="WhatsApp ilə yazın"
-      className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-400 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg shadow-green-900/40 hover:shadow-green-700/50 hover:scale-110 transition-all duration-300"
+      aria-label="Söhbəti aç"
+      className="fixed right-4 bottom-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-xl shadow-blue-600/40 transition-transform duration-200 hover:scale-105 active:scale-95 sm:right-6 sm:bottom-6 border border-white/10"
     >
-      <MessageCircle size={26} fill="white" />
+      <MessageCircle size={24} fill="currentColor" />
     </a>
   );
 }

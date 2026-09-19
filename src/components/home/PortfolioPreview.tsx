@@ -2,7 +2,6 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { ArrowRight } from 'lucide-react';
 import { portfolioItems } from '@/data/portfolio';
 import PortfolioCard from '@/components/portfolio/PortfolioCard';
 
@@ -12,26 +11,31 @@ export default function PortfolioPreview() {
   const featured = portfolioItems.slice(0, 3);
 
   return (
-    <section className="py-16 md:py-24 bg-[#060B17]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">{t('selected_title')}</h2>
-            <p className="text-gray-400">{t('subtitle')}</p>
-          </div>
-          <Link
-            href="/portfolio"
-            className="flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold text-sm transition-colors whitespace-nowrap"
-          >
-            {t('view_all')} <ArrowRight size={16} />
+    <section className="mx-auto mt-20 sm:mt-24 max-w-6xl px-5 lg:px-8">
+      {/* Neyrosoft Header */}
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="max-w-2xl">
+          <h2 className="text-white text-2xl sm:text-[2rem] font-bold">
+            {locale === 'az' ? 'Son işlərimiz' : 'Recent projects'}
+          </h2>
+          <p className="text-gray-400 mt-3 leading-relaxed max-w-xl text-sm sm:text-base">
+            {locale === 'az'
+              ? 'Biznes proseslərini sadələşdirən platforma və xüsusi proqram nümunələrimiz.'
+              : 'Our platform and custom software implementations that streamline business workflows.'}
+          </p>
+        </div>
+        <div className="shrink-0">
+          <Link href="/portfolio" className="btn btn-outline text-xs sm:text-sm">
+            {locale === 'az' ? 'Hamısına bax' : 'View all'}
           </Link>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featured.map((item) => (
-            <PortfolioCard key={item.id} item={item} locale={locale} />
-          ))}
-        </div>
+      {/* Grid */}
+      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {featured.map((item) => (
+          <PortfolioCard key={item.id} item={item} locale={locale} />
+        ))}
       </div>
     </section>
   );

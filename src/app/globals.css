@@ -2,29 +2,177 @@
 
 :root {
   --background: #0A0F1E;
-  --foreground: #F9FAFB;
+  --foreground: #F8FAFC;
+  --canvas: #0A0F1E;
+  --surface: #0F172A;
+  --surface-2: #1E293B;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --signal: #3B82F6;
+  --signal-soft: rgba(59, 130, 246, 0.12);
+  --text-body: #F8FAFC;
+  --text-muted: #94A3B8;
 }
 
 body {
-  background-color: #0A0F1E;
-  color: #F9FAFB;
+  background-color: var(--background);
+  color: var(--foreground);
   overflow-x: hidden;
   font-family: inherit;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Neyrosoft Custom Utilities */
+.card {
+  background-color: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.5);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--signal);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.35);
+}
+.btn-primary:hover {
+  background-color: #2563EB;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-ink {
+  background-color: var(--surface-2);
+  color: var(--text-body);
+  border: 1px solid var(--line);
+}
+.btn-ink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--line-strong);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-body);
+  border: 1px solid var(--line);
+}
+.btn-outline:hover {
+  background-color: var(--surface-2);
+  border-color: var(--line-strong);
+}
+
+.icon-plate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background-color: var(--surface-2);
+  color: var(--signal);
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.nav-pill {
+  border-radius: 9999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+.nav-pill:hover {
+  color: var(--text-body);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Neyrosoft SVG Circuit Trace Animation */
+@keyframes traceAnim {
+  0% {
+    stroke-dashoffset: var(--trace-length, 800);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.9;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.2;
+  }
+}
+
+@keyframes nodePulseAnim {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+    filter: drop-shadow(0 0 6px #3B82F6);
+  }
+}
+
+.animate-trace {
+  stroke-dasharray: var(--trace-length, 800);
+  stroke-dashoffset: var(--trace-length, 800);
+  animation: traceAnim 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-node {
+  animation: nodePulseAnim 2.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
   background: #0A0F1E;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #1E293B;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {

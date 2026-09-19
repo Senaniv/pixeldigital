@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { ExternalLink, Check, Layers, Code } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import type { PortfolioItem } from '@/data/types';
 import PortfolioModal from './PortfolioModal';
 
@@ -26,87 +26,71 @@ export default function PortfolioCard({ item, locale }: PortfolioCardProps) {
     <>
       <div
         onClick={() => setIsOpen(true)}
-        className="group relative cursor-pointer bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.08] hover:border-white/[0.2] rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/10 flex flex-col justify-between"
+        className="card card-hover group block overflow-hidden rounded-[24px] cursor-pointer"
       >
-        {/* Visual Graphic Header / Mockup Preview */}
-        <div className="relative h-48 w-full bg-gradient-to-br from-slate-900 via-[#0d1733] to-[#0A0F1E] border-b border-white/[0.05] p-5 flex flex-col justify-between overflow-hidden">
+        {/* Neyrosoft aspect-16/10 visual box */}
+        <div className="relative aspect-16/10 w-full overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#121D38] to-[#0A0F1E] border-b border-white/10 p-5 flex flex-col justify-between">
+          
           {/* Subtle grid pattern */}
           <div
-            className="absolute inset-0 opacity-15"
+            className="absolute inset-0 opacity-15 pointer-events-none"
             style={{
-              backgroundImage: 'radial-gradient(#3B82F6 1px, transparent 1px)',
+              backgroundImage: 'radial-gradient(#3B82F6 1.2px, transparent 1.2px)',
               backgroundSize: '16px 16px',
             }}
           />
 
           {/* Top badges */}
           <div className="relative z-10 flex items-center justify-between gap-2">
-            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/10 text-gray-300 border border-white/10 backdrop-blur-md">
+            <span className="text-[11px] font-semibold px-3 py-1 rounded-full bg-white/10 text-gray-200 border border-white/10 backdrop-blur-md">
               {categoryLabel}
             </span>
 
-            {/* Example Badge - only shown if isExample is true */}
             {item.isExample && (
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 backdrop-blur-md">
+              <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 backdrop-blur-md">
                 {t('example_badge')}
               </span>
             )}
           </div>
 
-          {/* Mini UI Representation */}
-          <div className="relative z-10 bg-slate-950/80 rounded-xl p-3 border border-white/10 shadow-lg backdrop-blur-sm transform group-hover:scale-105 transition-transform duration-300">
-            <div className="flex items-center gap-1.5 mb-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-500/70" />
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
-              <span className="ml-2 text-[10px] text-gray-500 font-mono">pixel-platform.app</span>
+          {/* Center Graphic representation */}
+          <div className="relative z-10 mx-auto w-full max-w-[280px] bg-[#0A0F1E]/90 rounded-xl p-3.5 border border-white/10 shadow-xl transition-transform duration-500 group-hover:scale-[1.04]">
+            <div className="flex items-center gap-1.5 mb-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+              <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+              <span className="ml-2 text-[10px] text-gray-500 font-mono truncate">
+                {item.id}.pixel-digital.az
+              </span>
             </div>
             <div className="space-y-1.5">
-              <div className="h-2 w-3/4 bg-blue-500/40 rounded" />
-              <div className="h-2 w-1/2 bg-purple-500/30 rounded" />
+              <div className="h-2 w-4/5 bg-blue-500/40 rounded" />
+              <div className="h-2 w-3/5 bg-purple-500/30 rounded" />
             </div>
+          </div>
+
+          {/* Bottom tag inside graphic */}
+          <div className="relative z-10 flex items-center gap-1.5 text-[11px] text-gray-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+            <span>{item.technologies.slice(0, 3).join(' • ')}</span>
           </div>
         </div>
 
-        {/* Content Body */}
-        <div className="p-6 flex-1 flex flex-col justify-between">
-          <div>
-            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+        {/* Neyrosoft Card Bottom strip */}
+        <div className="flex items-center justify-between gap-3 p-5 sm:p-6">
+          <div className="min-w-0 flex-1">
+            <h3 className="text-white truncate text-base font-semibold group-hover:text-blue-400 transition-colors">
               {title}
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed line-clamp-2 mb-4">
-              {description}
+            <p className="text-gray-400 mt-1 truncate text-xs sm:text-sm">
+              {item.isExample ? `${categoryLabel} · ${t('example_badge')}` : categoryLabel}
             </p>
           </div>
 
-          <div>
-            {/* Tech tags */}
-            <div className="flex flex-wrap gap-1.5 mb-5">
-              {item.technologies.slice(0, 3).map((tech) => (
-                <span
-                  key={tech}
-                  className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-white/5 text-gray-400 border border-white/5"
-                >
-                  {tech}
-                </span>
-              ))}
-              {item.technologies.length > 3 && (
-                <span className="text-[11px] font-medium px-1.5 py-0.5 rounded-md bg-white/5 text-gray-500">
-                  +{item.technologies.length - 3}
-                </span>
-              )}
-            </div>
-
-            {/* Action link */}
-            <div className="flex items-center justify-between pt-3 border-t border-white/5">
-              <span className="text-xs font-semibold text-blue-400 group-hover:text-blue-300 transition-colors flex items-center gap-1">
-                {t('view_btn')} <ExternalLink size={13} />
-              </span>
-              <span className="text-xs text-gray-500">
-                {locale === 'en' ? 'Details' : 'Ətraflı'}
-              </span>
-            </div>
-          </div>
+          {/* Circular Neyrosoft arrow plate */}
+          <span className="icon-plate h-10 w-10 rounded-full shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+            <ArrowUpRight size={18} />
+          </span>
         </div>
       </div>
 
